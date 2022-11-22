@@ -1,0 +1,4 @@
+example_id                                        | status | run_time        |
+------------------------------------------------- | ------ | --------------- |
+./spec/routing/product_routing_spec.rb[1:1]       | passed | 0.02144 seconds |
+./spec/views/products/index.html.erb_spec.rb[1:1] | passed | 10.93 seconds   |

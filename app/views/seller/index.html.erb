@@ -1,0 +1,19 @@
+<div class="p-5" style = "background-color: #f6f6f7;">
+<div class="container">
+<ol class="list-group list-group-numbered">
+<h1  class="mb-3">All Seller's</h1>
+ 
+  <% @seller.each do |seller| %>
+  <li class="list-group-item">
+     <%= link_to seller.name, seller, class:"text-info"%><br>
+    
+  </li>  
+  <% end %><br>
+  
+ 
+</ol>
+ 
+<%= link_to "All Products", seller_products_path(@seller), class:"btn", style:"background-color: #008ecc;"%>
+
+</div>
+</div>

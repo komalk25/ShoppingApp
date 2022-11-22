@@ -1,0 +1,32 @@
+
+[1mFrom:[0m /home/komalk/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.3/lib/action_controller/metal/instrumentation.rb:68 ActionController::Instrumentation#process_action:
+
+    [1;34m50[0m: [32mdef[0m [1;34mprocess_action[0m(*)
+    [1;34m51[0m:   [1;34;4mActiveSupport[0m::[1;34;4mExecutionContext[0m[[33m:controller[0m] = [1;36mself[0m
+    [1;34m52[0m: 
+    [1;34m53[0m:   raw_payload = {
+    [1;34m54[0m:     [35mcontroller[0m: [1;36mself[0m.class.name,
+    [1;34m55[0m:     [35maction[0m: action_name,
+    [1;34m56[0m:     [35mrequest[0m: request,
+    [1;34m57[0m:     [35mparams[0m: request.filtered_parameters,
+    [1;34m58[0m:     [35mheaders[0m: request.headers,
+    [1;34m59[0m:     [35mformat[0m: request.format.ref,
+    [1;34m60[0m:     [35mmethod[0m: request.request_method,
+    [1;34m61[0m:     [35mpath[0m: request.fullpath
+    [1;34m62[0m:   }
+    [1;34m63[0m: 
+    [1;34m64[0m:   [1;34;4mActiveSupport[0m::[1;34;4mNotifications[0m.instrument([31m[1;31m"[0m[31mstart_processing.action_controller[1;31m"[0m[31m[0m, raw_payload)
+    [1;34m65[0m: 
+    [1;34m66[0m:   [1;34;4mActiveSupport[0m::[1;34;4mNotifications[0m.instrument([31m[1;31m"[0m[31mprocess_action.action_controller[1;31m"[0m[31m[0m, raw_payload) [32mdo[0m |payload|
+    [1;34m67[0m:     result = [32msuper[0m
+ => [1;34m68[0m:     payload[[33m:response[0m] = response
+    [1;34m69[0m:     payload[[33m:status[0m]   = response.status
+    [1;34m70[0m:     result
+    [1;34m71[0m:   [32mrescue[0m => error
+    [1;34m72[0m:     payload[[33m:status[0m] = [1;34;4mActionDispatch[0m::[1;34;4mExceptionWrapper[0m.status_code_for_exception(error.class.name)
+    [1;34m73[0m:     raise
+    [1;34m74[0m:   [32mensure[0m
+    [1;34m75[0m:     append_info_to_payload(payload)
+    [1;34m76[0m:   [32mend[0m
+    [1;34m77[0m: [32mend[0m
+

@@ -1,0 +1,59 @@
+<div id="products">
+ <% @products.each do |product| %>
+<section style="background-color: #f6f6f7;">
+  <div class="container py-2">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-xl-11">
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                    <%=image_tag product.image_url, style: 'height:150px; width:200px;' %>
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <h5><%=product.title%></h5>
+                <div class="d-flex flex-row">
+                  <div class="text-danger mb-4 me-2">
+                    <i class="bi bi-star-fill"></i>
+                   <i class="bi bi-star-fill"></i>
+                   <i class="bi bi-star-fill"></i>
+                   <i class="bi bi-star-fill"></i>
+                   <i class="bi bi-star-fill"></i>
+                  </div>
+        
+                </div>
+                
+                
+                <p class="text-truncate mb-4 mb-md-0">
+                  <%=product.description%>
+                </p>
+              </div>
+              
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                  <h4 class="mb-1 me-1">Rs.<%= product.price %></h4>
+                  
+                </div>
+                <h6 class="text-success">Free shipping</h6>
+                <div class="d-flex flex-column mt-5">
+                 <%=link_to "Details", product, class:"btn btn-sm", style:"background-color: #008ecc;" %> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</section>
+<%end%>
+</div>

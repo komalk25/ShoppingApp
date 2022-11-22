@@ -1,0 +1,44 @@
+<section>
+  <div class="container py-1">
+    <div class="row">
+      <div class="col-md-12 col-xl-6">
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body"  style="background-color:#f6f6f7;">
+            <div class="row">
+              <div id="<%= dom_id product %>"> 
+                <div class="row">
+                <div class="col-md-12 col-xl-4">
+                <p>
+                  <%= image_tag product.image_url,  style: 'height:100px; width:100px;' %>
+                </p>
+                </div>
+
+                <div class="col">
+                <p>
+                  <%= video_tag product.video_url.to_s, :controls => true,style: 'height:100px; width:100px;' %>
+                </p>
+                </div>
+                </div>
+                <p>
+                   <%= product.title%>
+                </p>
+                <p>
+                  <%= product.description %>
+                </p>
+                <p>
+                    Rs. <%= product.price %>
+                </p>
+                      
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>  
+  </div>
+</section>
+
+
+ 

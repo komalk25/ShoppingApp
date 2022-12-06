@@ -3,8 +3,9 @@ class SellerController < ApplicationController
   before_action :authenticate_seller!
   def index
     @seller = Seller.all
+ 
   end
-
+  
   def show
     @seller = Seller.find(params[:id])
   end

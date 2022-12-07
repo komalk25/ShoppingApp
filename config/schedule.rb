@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every :tuesday, at: '10.09 pm' do
-    runner "Seller.weekly_update", :environment => 'development', :output => 'log/cron.log' 
+every :wednesday, at: '10.00 pm' do
+    rake 'weekly_update', :environment => 'development', :output => 'log/cron.log' 
 end

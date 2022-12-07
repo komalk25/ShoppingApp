@@ -5,8 +5,9 @@ class OrderMailer < ApplicationMailer
         mail to: @user.email, subject: "OrderConfirm"
     end    
 
-    def weekly_mail(s,report)
-        @report = report
+    def weekly_mail(s,value)
+        @report = value
+        @s = s
         mail to: s, subject: "product report"
     end    
  

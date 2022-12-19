@@ -7,7 +7,8 @@
           <li class="nav-item"><%= button_to("Log Out",destroy_seller_session_path,method: :delete, class: "btn btn-outline-light btn-sm") %></li>&nbsp;
           <div class="nav-item active">
            <%= link_to "Seller's", seller_index_url , class:"btn btn-outline-light btn-sm"%>
-          </div>
+           <%= link_to "Generate Report", seller_index_path(format: "xlsx"), class: "btn btn-outline-light btn-sm" %>
+                     </div>
         <% else %>
           <%if user_signed_in?%>
              
@@ -21,10 +22,7 @@
           
           <%= link_to '<i class="bi bi-cart3  fa-lg "></i>
             <span class="position absolute top-0 start-90 translate-middle badge rounded-pill bg-danger"></span>'.html_safe,      cart_url(:id => current_user.id), class:"btn btn-outline-light"
-          %>    
-
-              
-
+          %> 
         <%end%>
     </div>
   </div>

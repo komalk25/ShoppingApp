@@ -3,6 +3,12 @@ class SellerController < ApplicationController
   before_action :authenticate_seller!
   def index
     @seller = Seller.all
+    @report = OrderItem.joins(product: :seller).all.group(:name).count
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
+  
  
   end
   

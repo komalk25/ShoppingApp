@@ -1,0 +1,15 @@
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Products") do |sheet|
+    sheet.add_row %w(Title Description Price)
+
+    @sellers.each do |seller|
+        if seller == current_seller
+            @p = seller.products
+            @p.each do |p|
+                sheet.add_row [p.title, p.description, p.price]     
+            end   
+        end
+    end
+end

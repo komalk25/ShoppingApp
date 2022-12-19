@@ -1,4 +1,11 @@
 example_id                                        | status | run_time        |
 ------------------------------------------------- | ------ | --------------- |
+./spec/controllers/order_controller_spec.rb[1:1]  | failed | 0.02541 seconds |
+./spec/features/order_management_spec.rb[1:1]     | passed | 1.4 seconds     |
+./spec/features/order_management_spec.rb[1:2]     | failed | 0.07968 seconds |
+./spec/mailers/order_mailer_spec.rb[1:1]          | passed | 0.00338 seconds |
+./spec/mailers/order_mailer_spec.rb[1:2]          | passed | 0.08545 seconds |
+./spec/requests/order_management_spec.rb[1:1]     | passed | 1.07 seconds    |
+./spec/requests/order_management_spec.rb[1:2]     | failed | 0.14895 seconds |
 ./spec/routing/product_routing_spec.rb[1:1]       | passed | 0.02144 seconds |
 ./spec/views/products/index.html.erb_spec.rb[1:1] | passed | 10.93 seconds   |

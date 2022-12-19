@@ -13,4 +13,8 @@ RSpec.feature 'order management' do
     click_button('Deliver to this address')
     expect(current_path).to eq(orders_path)
   end
+
+  it '..' do
+    expect{ @order.save }.to change { ActionMailer::Base.deliveries.count }.by(1)
+  end  
 end

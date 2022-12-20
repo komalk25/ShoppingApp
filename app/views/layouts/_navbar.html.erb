@@ -6,9 +6,10 @@
         <% if seller_signed_in? %>
           <li class="nav-item"><%= button_to("Log Out",destroy_seller_session_path,method: :delete, class: "btn btn-outline-light btn-sm") %></li>&nbsp;
           <div class="nav-item active">
-           <%= link_to "Seller's", seller_index_url , class:"btn btn-outline-light btn-sm"%>
-           <%= link_to "Generate Report", seller_index_path(format: "xlsx"), class: "btn btn-outline-light btn-sm" %>
-                     </div>
+            <%= link_to "Seller's", seller_index_url , class:"btn btn-outline-light btn-sm"%>
+            <%= link_to "Generate Report", seller_index_path(format: "xlsx"), class: "btn btn-outline-light btn-sm" %>
+            <%= link_to "pdf", seller_index_path(format: "pdf"), class: "btn btn-outline-light btn-sm"%>          
+          </div>
         <% else %>
           <%if user_signed_in?%>
              

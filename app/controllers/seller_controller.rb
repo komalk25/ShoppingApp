@@ -7,11 +7,14 @@ class SellerController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx
+      format.pdf do
+        render pdf: "products" , template: "seller/report", formats: [:html], 
+        layout: 'pdf',
+        page_size: 'A4'
+      end  
     end
-  
- 
   end
-  
+
   def show
     @seller = Seller.find(params[:id])
   end

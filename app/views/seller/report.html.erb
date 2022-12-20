@@ -1,0 +1,12 @@
+
+
+<% @seller.each do |seller| %>
+  <% if seller == current_seller %>
+    <% @p = seller.products %>
+    <% @p.each do |p| %>
+      <%= p.title %>
+      <%= p.description %>
+      <%= p.price%>
+    <% end %>  
+  <% end %>
+<% end %>

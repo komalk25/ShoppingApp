@@ -1,12 +1,25 @@
 
-
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Price</th>
+  </tr>
+</thead>
+<tbody>
 <% @seller.each do |seller| %>
   <% if seller == current_seller %>
-    <% @p = seller.products %>
-    <% @p.each do |p| %>
-      <%= p.title %>
-      <%= p.description %>
-      <%= p.price%>
-    <% end %>  
+  <% @p = seller.products %>
+  <% @p.each do |p| %>
+  <tr>
+    <td> <%= p.title %></td>
+    <td> <%= p.description %></td>
+    <td><%= p.price%></td>
+  </tr>
+  <% end %>
   <% end %>
 <% end %>
+
+
+</table>

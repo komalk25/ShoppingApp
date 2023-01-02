@@ -5,7 +5,7 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, "/path/to/my/cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every :wednesday, at: '10.00 pm' do
+every :monday, at: '7.13 pm' do
     rake 'weekly_update', :environment => 'development', :output => 'log/cron.log' 
 end

@@ -45,8 +45,8 @@ Rails.application.configure do
     domain: "gmail.com",
     port: 587,
     authentication: "plain",
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"],
+    user_name: "sunitakhilari24@gmail.com",
+    password: "uqpyvtauacnfynht",
     :enable_starttls_auto => true
   }
   config.action_mailer.perform_caching = false

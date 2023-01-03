@@ -55,7 +55,7 @@
                           <h5 class="mb-0"><%=item.product.price%></h5>
                         </div>
                         
-                       <%= button_to "remove", cart_path(item), method: :delete, class:"btn btn-outline-danger"%>
+                       <%= button_to "remove", cart_path(item), method: :delete, class:"btn btn-outline-danger", remote: true %>
                         
                       </div>
                     

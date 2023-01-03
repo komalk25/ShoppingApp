@@ -31,6 +31,10 @@ class CartsController < ApplicationController
     @cart = Cart.find_by(user_id: current_user.id)
     @cart_item = @cart.cart_items.find(params[:id])
     @cart_item.destroy
+    respond_to do |format|
+      format.html
+      format.js
+    end
     redirect_to cart_path
   end
 

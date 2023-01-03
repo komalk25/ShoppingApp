@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
     @seller = Seller.find(params[:seller_id])
     @product = @seller.products.create(product_params)
     redirect_to seller_path(@seller)

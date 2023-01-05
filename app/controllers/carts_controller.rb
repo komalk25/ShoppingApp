@@ -32,8 +32,8 @@ class CartsController < ApplicationController
     @cart_item = @cart.cart_items.find(params[:id])
     @cart_item.destroy
     respond_to do |format|
-      format.html
       format.js
+      format.html
     end
     redirect_to cart_path
   end

@@ -19,6 +19,6 @@ set :output, "/path/to/my/cron_log.log"
 
 # Learn more: http://github.com/javan/whenever
 
-every :tuesday, at: '6.06 pm' do
+every :monday, at: '3.30 pm' do
     rake 'weekly_update', :environment => 'development', :output => 'log/cron.log' 
 end

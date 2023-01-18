@@ -36,23 +36,16 @@ class ProductsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
-# DELETE /products/1 or /products/1.json
-def destroy
-  @seller = Seller.find(params[:seller_id])
-  @product = @seller.products.find(params[:id])
-  @product.destroy
-  redirect_to seller_path(@seller), status: 303
-  #  @product.destroy
-end
+
+  def destroy
+    @seller = Seller.find(params[:seller_id])
+    @product = @seller.products.find(params[:id])
+    @product.destroy
+    redirect_to seller_path(@seller), status: 303
+  end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  # def set_product
-  #    @product = Product.find(params[:id])
-  #  end
-  # Only allow a list of trusted parameters through.
+  
   def product_params
     params.require(:product).permit(:image, :title, :description, :price, :seller_id, :video)
   end

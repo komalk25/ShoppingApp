@@ -87,6 +87,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
+gem 'rubocop', require: false
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'  

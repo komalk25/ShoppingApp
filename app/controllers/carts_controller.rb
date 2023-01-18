@@ -15,14 +15,15 @@ class CartsController < ApplicationController
     respond_to do |format|
       if @cart_quantity.save
         format.turbo_stream{
-          render turbo_stream:[
-            turbo_stream.update("cartshow", partial: "carts/cart", locals:{cart: @cart})
+          render turbo_stream: [
+            turbo_stream.update('cartshow', partial: 'carts/cart', locals: { cart: @cart })
           ]
         }
-       format.html{ redirect_to cart_path(@cart)} 
-      end  
-    end  
+      format.html{ redirect_to cart_path(@cart)} 
+      end
+    end
   end
+
   def create
     @cart = Cart.find_by(user_id: current_user.id)
     @product = Product.find(params[:product_id])
@@ -30,26 +31,21 @@ class CartsController < ApplicationController
     respond_to do |format|
       if @cart_item.save
         format.turbo_stream
-        # format.turbo_stream do
-        #   render turbo_stream:[
-        #     turbo_stream.update('cartshow', partial: "carts/cart", locals: {cart: @cart}),
-        #     ]   
-        # end  
-        #format.html { redirect_to cart_path}
       else
         render :new
       end
-    end  
+    end
   end
+
   def destroy
     @cart = Cart.find_by(user_id: current_user.id)
     @cart_item_destroy = @cart.cart_items.find(params[:id])
     @cart_item_destroy.destroy
     respond_to do |format|
-      format.turbo_stream{
-        render turbo_stream:[
+      format.turbo_stream { 
+        render turbo_stream: [
           turbo_stream.remove("cart_it_#{@cart_item_destroy.id}"),
-          turbo_stream.update('cartshow', partial: "carts/cart", locals: {cart: @cart} )
+          turbo_stream.update('cartshow', partial: 'carts/cart', locals: { cart: @cart })
         ]
       }
       format.html

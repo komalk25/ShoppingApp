@@ -5,7 +5,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   include CarrierWave::Video
   process encode_video: [:mp4, resolution: "220x240"] 
   # Choose what kind of storage to use for this uploader:
-   storage :file
+  storage :file
 
   #storage :fog
 

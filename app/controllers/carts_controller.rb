@@ -14,7 +14,7 @@ class CartsController < ApplicationController
     end
     respond_to do |format|
       if @cart_quantity.save
-        format.turbo_stream{
+        format.turbo_stream {
           render turbo_stream: [
             turbo_stream.update('cartshow', partial: 'carts/cart', locals: { cart: @cart })
           ]

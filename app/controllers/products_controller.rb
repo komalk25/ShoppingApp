@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # before_action :set_product, only: %i[ show edit update destroy ]
+  
   load_and_authorize_resource
   def index
     @products = Product.all
@@ -11,15 +11,12 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    # @seller = Seller.find(params[:seller_id])
-    # @product = @seller.products.find(params[:id])
   end
 
   def create
     @seller = Seller.find(params[:seller_id])
     @product = @seller.products.create(product_params)
     redirect_to seller_path(@seller)
-    # @product = Product.new(product_params)
   end
 
   def edit
@@ -45,7 +42,7 @@ class ProductsController < ApplicationController
   end
 
   private
-  
+
   def product_params
     params.require(:product).permit(:image, :title, :description, :price, :seller_id, :video)
   end

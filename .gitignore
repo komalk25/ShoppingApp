@@ -33,5 +33,4 @@
 # Ignore application configuration
 /config/application.yml
 
-/public
-/Gemfile.lock
+/public/uploads

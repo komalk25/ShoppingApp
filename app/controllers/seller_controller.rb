@@ -11,7 +11,7 @@ class SellerController < ApplicationController
         render pdf: "products" , template: "seller/report", formats: [:html], 
         layout: 'pdf',
         page_size: 'A4'
-      end  
+      end
     end
   end
 

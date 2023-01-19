@@ -1,27 +1,26 @@
 <h3>order summary : </h3>
 <div class= " container">
-<div class="card" style="width: 28rem; background-color: #f6f6f7">
-<div class="card-body p-2">
-<% @order.order_items.each do |order|%>
-     <%= @order.date.strftime("%d/%m/%y")%><hr>
-    <div class="row">
-        <div class="col-sm-8">Order ID : <%= @order.id%></div>
-        <div class="col-sm-4 ">Sold To : <%= @order.user.name%></div>
-    </div><hr>
-    Supplier : <%= order.product.seller.name%><hr>
-    <div class="row">
-        <div class="col-sm-6">
-            <%=image_tag order.product.image_url, style: 'height:120px; width:140px;' %>
+    <div class="card" style="width: 28rem; background-color: #f6f6f7">
+        <div class="card-body p-2">
+            <% @order.order_items.each do |order|%>
+            <%= @order.date.strftime("%d/%m/%y")%><hr>
+            <div class="row">
+                <div class="col-sm-8">Order ID : <%= @order.id%></div>
+                    <div class="col-sm-4 ">Sold To : <%= @order.user.name%></div>
+                </div><hr>
+                Supplier : <%= order.product.seller.name%><hr>
+                <div class="row">
+                <div class="col-sm-6">
+                    <%=image_tag order.product.image_url, style: 'height:120px; width:140px;' %>
+                </div>
+                <div class="col-sm-6">
+                    <%= order.product.title%><br>
+                    <li>Delivery by <%= (@order.date + 3.days).strftime("%d/%m/%y")%></li>
+                </div>   
+             </div>
+            <%end%>
         </div>
-        <div class="col-sm-6">
-            <%= order.product.title%><br>
-           <li>Delivery by <%= (@order.date + 3.days).strftime("%d/%m/%y")%></li>
-        </div>   
     </div>
-
-<%end%>
-</div>
-</div>
 </div>
 
 

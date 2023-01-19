@@ -1,6 +1,6 @@
-<%# <%= turbo_stream.update('cartshow', partial: "carts/cart", locals: {cart: @cart})%> 
+ 
 <%= turbo_stream.update "cartshow" do %>
-    <%= render "carts/cart", cart: @cart%>
+  <%= render "carts/cart", cart: @cart%>
 <% end %>
 
 <%= turbo_stream.replace "productshow" do %>

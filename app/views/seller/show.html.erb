@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
 <h5 class="text-info">
 Welcome, <%= @seller.name %>
 </h5>
@@ -6,10 +7,18 @@ Welcome, <%= @seller.name %>
 <h6>Product List:</h6>
 <%= render @seller.products %>
 <% if @seller.name != current_seller.name %>
+=======
+    <h5 class="text-info">
+        Welcome, <%= @seller.name %>
+    </h5>
+    <h6>Product List:</h6>
+    <%= render @seller.products %>
+    <% if @seller.name != current_seller.name %>
+>>>>>>> c9a5a24003fd56552760794751a656bffc295ee5
      
-<%else%>
-<h6>Add Product:</h6>
-<%= render 'products/form', product:@seller.products.build%>
-<%end%> 
-<%= link_to "All Products", seller_products_path(@seller), class:"btn", style:"background-color: #008ecc;"%>
+    <%else%>
+        <h6>Add Product:</h6>
+        <%= render 'products/form', product:@seller.products.build%>
+    <%end%> 
+    <%= link_to "All Products", seller_products_path(@seller), class:"btn", style:"background-color: #008ecc;"%>
 </div>

@@ -3,39 +3,53 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
   authorize_resource
   def show
-    @cart = set_cart
+    @carts = set_cart
   end
 
   def reduce_quantity
-    @cart = CartItem.find(params[:id])
-    if @cart.quantity > 1
-      @cart.quantity -= 1
+    @cart = Cart.find_by(user_id: current_user.id)
+    @cart_quantity = CartItem.find(params[:id])
+    if @cart_quantity.quantity > 1
+      @cart_quantity.quantity -= 1
     end
-    @cart.save
-    redirect_to cart_path
+    respond_to do |format|
+      if @cart_quantity.save
+        format.turbo_stream {
+          render turbo_stream: [
+            turbo_stream.update('cartshow', partial: 'carts/cart', locals: { cart: @cart })
+          ]
+        }
+      format.html{ redirect_to cart_path(@cart)} 
+      end
+    end
   end
 
   def create
     @cart = Cart.find_by(user_id: current_user.id)
     @product = Product.find(params[:product_id])
     @cart_item = @cart.add_product(@product)
-
-    if @cart_item.save
-      redirect_to cart_path(@cart_item)
-    else
-      render :new
+    respond_to do |format|
+      if @cart_item.save
+        format.turbo_stream
+      else
+        render :new
+      end
     end
   end
 
   def destroy
     @cart = Cart.find_by(user_id: current_user.id)
-    @cart_item = @cart.cart_items.find(params[:id])
-    @cart_item.destroy
+    @cart_item_destroy = @cart.cart_items.find(params[:id])
+    @cart_item_destroy.destroy
     respond_to do |format|
+      format.turbo_stream { 
+        render turbo_stream: [
+          turbo_stream.remove("cart_it_#{@cart_item_destroy.id}"),
+          turbo_stream.update('cartshow', partial: 'carts/cart', locals: { cart: @cart })
+        ]
+      }
       format.html
-      format.js
     end
-    redirect_to cart_path
   end
 
   private

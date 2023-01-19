@@ -1,7 +1,5 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-
-
   def index
     @orders = Order.all
   end
@@ -18,7 +16,7 @@ class OrdersController < ApplicationController
       @order = @user.order.create(date: Time.now)
       if @order.save
         OrderMailer.order_confirm(@user).deliver_now
-      end    
+      end
     end
 
     @cart.cart_items.each do |item|

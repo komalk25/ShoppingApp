@@ -11,17 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
- 
-    
+  <body> 
+     <%= Time.now%> 
     <main>
       <%= render 'layouts/navbar'%>
-     
       <%= yield %>
       <%= turbo_frame_tag "remote_modal", target: "_top" %>
     </main> 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> 
-    
   </body>
 </html>

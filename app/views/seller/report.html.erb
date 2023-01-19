@@ -5,19 +5,17 @@
     <th scope="col">Title</th>
     <th scope="col">Description</th>
     <th scope="col">Price</th>
-<!--    <th scope="col">Image</th> -->
   </tr>
 </thead>
 <tbody>
 <% @seller.each do |seller| %>
   <% if seller == current_seller %>
-  <% @p = seller.products %>
-  <% @p.each do |p| %>
-  <tr>
-    <td> <%= p.title %></td>
-    <td> <%= p.description %></td>
-    <td><%= p.price%></td>
-<!--    <td><%= p.image%></td>
+    <% @p = seller.products %>
+    <% @p.each do |p| %>
+    <tr>
+      <td> <%= p.title %></td>
+      <td> <%= p.description %></td>
+      <td><%= p.price%></td>
   </tr>
   <% end %>
   <% end %>

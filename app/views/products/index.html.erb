@@ -1,6 +1,6 @@
 <div id="products">
  <% @products.each do |product| %>
-  <section style="background-color: #f6f6f7;">
+  <section class="bg-color">
     <div class="container py-2">
       <div class="row justify-content-center">
         <div class="col-md-12 col-xl-11">
@@ -39,7 +39,7 @@
                   </div>
                   <h6 class="text-success">Free shipping</h6>
                   <div class="d-flex flex-column mt-5">
-                  <%=link_to "Details", product, class:"btn btn-sm text-light", style:"background-color: #008ecc;", data: {"turbo-frame": :"productshow"} %> 
+                  <%=link_to "Details", product, class:"btn btn-sm text-light bt-color", data: {"turbo-frame": :"productshow"} %> 
                   </div>
                 </div>
               </div>

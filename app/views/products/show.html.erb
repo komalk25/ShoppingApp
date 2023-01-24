@@ -40,7 +40,9 @@
              <%if seller_signed_in?%>
                 You could'nt add products to the cart with seller credentials
              <%else%>
-              <%= button_to "Add To Cart", carts_path(:product_id => @product.id), method: :post, class: "btn text-light", classs: "bt-color"%>           
+             <span class= "bt-color">
+              <%= button_to "Add To Cart", carts_path(:product_id => @product.id), method: :post, class:"btn btn-sm text-light"%>           
+             </span>
              <%end%>
             </div>
           </div>

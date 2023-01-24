@@ -9,12 +9,12 @@
               <div class="row">
                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                   <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                    <%=image_tag product.image_url, style: 'height:150px; width:200px;' %>
-                    <a href="#!">
+                    <%=image_tag product.image_url, id: "image-size" %>
+                    <%# <a href="#!">
                     <div class="hover-overlay">
                       <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
                     </div>
-                    </a>
+                    </a> %>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6">
@@ -38,8 +38,8 @@
                     <h4 class="mb-1 me-1">Rs.<%= product.price %></h4>
                   </div>
                   <h6 class="text-success">Free shipping</h6>
-                  <div class="d-flex flex-column mt-5">
-                  <%=link_to "Details", product, class:"btn btn-sm text-light bt-color", data: {"turbo-frame": :"productshow"} %> 
+                  <div class="d-flex flex-column mt-5 bt-color">
+                  <%=link_to "Details", product, class:"btn btn-sm text-light", data: {"turbo-frame": :"productshow"} %> 
                   </div>
                 </div>
               </div>

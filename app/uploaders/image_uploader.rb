@@ -7,6 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 <<<<<<< HEAD
   #storage :file
   storage :fog
+  
 =======
   storage :file
   #storage :fog

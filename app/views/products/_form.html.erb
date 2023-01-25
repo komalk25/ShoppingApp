@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-md-center align-items-center vh-80">
   <%= form_with model: [ @seller, product ] do |form|%> 
-    <div class="card" style="width: 38rem;">
+    <div class="card" id= "cardinfo">
       <div class="card-body">
         <% if product.errors.any? %>
           <div style="color: red">
@@ -14,29 +14,29 @@
         <% end %>
         <div class="mb-3">
           <%= form.label :image, class: "form-label"%><br>
-          <%= form.file_field :image,  class: "form-control", style: "width:550px"%>
+          <%= form.file_field :image,  class: "form-control form-style"%>
         </div>
         <div class="mb-3">
           <%= form.label :title, class: "form-label" %>
-          <%= form.text_field :title, class: "form-control", style: "width:550px" %>
+          <%= form.text_field :title, class: "form-control form-style" %>
         </div class="mb-3">
 
         <div class="mb-3">
           <%= form.label :description, class: "form-label" %>
-          <%= form.text_area :description, class: "form-control", style: "width:550px" %>
+          <%= form.text_area :description, class: "form-control form-style" %>
         </div>
 
         <div class="mb-3">
           <%= form.label :price, class: "form-label" %>
-          <%= form.text_field :price, class: "form-control", style: "width:550px" %>
+          <%= form.text_field :price, class: "form-control form-style" %>
         </div>
 
         <div class="mb-3">
           <%= form.label :video  , class: "form-label" %>
-          <%= form.file_field :video, class: "form-control", style: "width:550px" %>
+          <%= form.file_field :video, class: "form-control form-style" %>
         </div>
         <div >
-          <%= form.submit class:"btn", style:"background-color: #008ecc;"%>
+          <%= form.submit class:"btn bt-color'%>
         </div>
      </div>
     </div>

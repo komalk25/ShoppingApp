@@ -10,5 +10,5 @@
         <h6>Add Product:</h6>
         <%= render 'products/form', product:@seller.products.build%>
     <%end%> 
-    <%= link_to "All Products", seller_products_path(@seller), class:"btn", style:"background-color: #008ecc;"%>
+    <%= link_to "All Products", seller_products_path(@seller), class:"btn btn-primary"%>
 </div>

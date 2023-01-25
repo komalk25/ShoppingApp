@@ -2,20 +2,20 @@
   <div class="container py-1">
     <div class="row">
       <div class="col-md-12 col-xl-6">
-        <div class="card shadow-0 border rounded-3">
-          <div class="card-body"  style="background-color:#f6f6f7;">
+        <div class="card shadow-3 border rounded-3">
+          <div class="card-body bg-color">
             <div class="row">
               <div id="<%= dom_id product %>"> 
                 <div class="row">
                 <div class="col-md-12 col-xl-4">
                 <p>
-                  <%= image_tag product.image_url,  style: 'height:100px; width:100px;' %>
+                  <%= image_tag product.image_url, id: "imagepartial" %>
                 </p>
                 </div>
 
                 <div class="col">
                 <p>
-                  <%= video_tag product.video_url.to_s, :controls => true,style: 'height:100px; width:100px;' %>
+                  <%= video_tag product.video_url.to_s, :controls => true, id: "videopartial" %>
                 </p>
                 </div>
                 </div>

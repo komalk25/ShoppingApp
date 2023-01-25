@@ -11,7 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require_tree
  */
+
+
 @import "bootstrap";
 @import url(product.css);
 .main-container{

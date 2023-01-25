@@ -1,7 +1,7 @@
 <div class="row justify-content-center main-container">
   <div class="col-4 ">
-    <div class="card" style="width: 26rem;">
-      <section style="background-color: #f6f6f7">
+    <div class="card" id="carduser">
+      <section class= "bg-color">
         <div class="card-body">
           <h5 class="card-title"><div class="fw-bold" ><%= @user.name %><br></div></h5>
           <p class="card-text"><%= @user.address%><br>
@@ -10,7 +10,7 @@
           </p>
           <%= link_to "+ Edit ", edit_user_path,class:"btn btn-outline-dark"%></p>
           <%= button_to("Deliver to this address", orders_path,
-                  class: "btn btn-sm float-end", style:"background-color: #008ecc;")%>
+                  class: "btn btn-sm float-end bt-color")%>
         </div>
       </section>                
     </div>

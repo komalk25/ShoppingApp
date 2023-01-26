@@ -10,11 +10,6 @@
                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                   <div class="bg-image hover-zoom ripple rounded ripple-surface">
                     <%=image_tag product.image_url, id: "imageinfo" %>
-                    <%# <a href="#!">
-                    <div class="hover-overlay">
-                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                    </div>
-                    </a> %>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6">
@@ -32,7 +27,6 @@
                     <%=product.description%>
                   </p>
                 </div>
-              
                 <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                   <div class="d-flex flex-row align-items-center mb-1">
                     <h4 class="mb-1 me-1">Rs.<%= product.price %></h4>

@@ -1,12 +1,12 @@
 <%= turbo_frame_tag "productshow" do%>
-<section style="background-color: #f6f6f7">
+<section class="bg-color">
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6 col-xl-4">
-        <div class="card col-md-12" style="border-radius: 5px;width: 100%">
+        <div class="card col-md-12">
           <div class="col-md-12 bg-image hover-overlay ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
-            <%= video_tag @product.video_url.to_s, :controls => true , style: 'height:180px; width:355px;'%>        
+            <%= video_tag @product.video_url.to_s, :controls => true , id: "videoinfo"%>        
           </div>
 
           <div class="card-body pb-0">
@@ -40,7 +40,9 @@
              <%if seller_signed_in?%>
                 You could'nt add products to the cart with seller credentials
              <%else%>
-              <%= button_to "Add To Cart", carts_path(:product_id => @product.id), method: :post, class: "btn text-light", style:"background-color: #008ecc;"%>           
+             <span class= "bt-color">
+              <%= button_to "Add To Cart", carts_path(:product_id => @product.id), method: :post, class:"btn btn-sm text-light"%>           
+             </span>
              <%end%>
             </div>
           </div>

@@ -17,7 +17,7 @@ gem 'puma', '~> 5.0'
 gem 'whenever', require: false
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
-gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'bootstrap', '~> 5.2.2'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 gem 'carrierwave', '~> 2.0'
@@ -89,3 +89,4 @@ end
 gem 'rubocop', require: false
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+

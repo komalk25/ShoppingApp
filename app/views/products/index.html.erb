@@ -1,6 +1,6 @@
 <div id="products">
  <% @products.each do |product| %>
-  <section style="background-color: #f6f6f7;">
+  <section class="bg-color">
     <div class="container py-2">
       <div class="row justify-content-center">
         <div class="col-md-12 col-xl-11">
@@ -9,12 +9,7 @@
               <div class="row">
                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                   <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                    <%=image_tag product.image_url, style: 'height:150px; width:200px;' %>
-                    <a href="#!">
-                    <div class="hover-overlay">
-                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                    </div>
-                    </a>
+                    <%=image_tag product.image_url, id: "imageinfo" %>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-6">
@@ -32,14 +27,13 @@
                     <%=product.description%>
                   </p>
                 </div>
-              
                 <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                   <div class="d-flex flex-row align-items-center mb-1">
                     <h4 class="mb-1 me-1">Rs.<%= product.price %></h4>
                   </div>
                   <h6 class="text-success">Free shipping</h6>
                   <div class="d-flex flex-column mt-5">
-                  <%=link_to "Details", product, class:"btn btn-sm text-light", style:"background-color: #008ecc;", data: {"turbo-frame": :"productshow"} %> 
+                  <%=link_to "Details", product, class:"btn bt-color", data: {"turbo-frame": :"productshow"} %> 
                   </div>
                 </div>
               </div>

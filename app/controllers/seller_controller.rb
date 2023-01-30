@@ -8,15 +8,9 @@ class SellerController < ApplicationController
       format.html
       format.xlsx
       format.pdf do
-<<<<<<< HEAD
-        render pdf: "products" , template: "seller/report", formats: [:html], 
-        layout: 'pdf',
-        page_size: 'A4'
-=======
         render pdf: 'products', template: 'seller/report', formats: [:html],
                layout: 'pdf',
                page_size: 'A4'
->>>>>>> c9a5a24003fd56552760794751a656bffc295ee5
       end
     end
   end

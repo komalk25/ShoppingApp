@@ -1,20 +1,10 @@
 <div class="container">
-<<<<<<< HEAD
-<h5 class="text-info">
-Welcome, <%= @seller.name %>
-</h5>
-
-<h6>Product List:</h6>
-<%= render @seller.products %>
-<% if @seller.name != current_seller.name %>
-=======
     <h5 class="text-info">
         Welcome, <%= @seller.name %>
     </h5>
     <h6>Product List:</h6>
     <%= render @seller.products %>
     <% if @seller.name != current_seller.name %>
->>>>>>> c9a5a24003fd56552760794751a656bffc295ee5
      
     <%else%>
         <h6>Add Product:</h6>

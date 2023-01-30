@@ -1,37 +1,32 @@
 <h3>users form page</h3>
 <div class="d-flex justify-content-md-center align-items-center vh-80">
-<%= form_with model: current_user do |form| %>
-<div class="card" style="width: 38rem;">
-  <div class="card-body">
-  <div class="mb-3">
-    <%= form.label :name, class: "form-label" %>
-    <%= form.text_field :name, class: "form-control", style: "width:550px" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :address, class: "form-label" %>
-    <%= form.text_area :address, class: "form-control", style: "width:550px"%>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :pincode, class: "form-label"%>
-    <%= form.number_field :pincode, class: "form-control", style: "width:550px"%>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :state, class: "form-label"%>
-    <%= form.text_field :state, class: "form-control", style: "width:550px"%>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :phone, class: "form-label"%>
-    <%= form.number_field :phone, class: "form-control", style: "width:550px"%>
-  </div>
-  
-  <div >
-    <%= form.submit%>
-  </div>
-  </div>
-  </div>
-<% end %>
+  <%= form_with model: current_user do |form| %>
+    <div class="card" class= "card-info">
+      <div class="card-body">
+        <div class="mb-3">
+          <%= form.label :name, class: "form-label" %>
+          <%= form.text_field :name, class: "form-control form-style" %>
+        </div>
+        <div class="mb-3">
+          <%= form.label :address, class: "form-label" %>
+          <%= form.text_area :address, class: "form-control form-style"%>
+        </div>
+        <div class="mb-3">
+          <%= form.label :pincode, class: "form-label"%>
+          <%= form.number_field :pincode, class: "form-control form-style"%>
+        </div>
+        <div class="mb-3">
+          <%= form.label :state, class: "form-label"%>
+          <%= form.text_field :state, class: "form-control form-style"%>
+        </div>
+        <div class="mb-3">
+          <%= form.label :phone, class: "form-label"%>
+          <%= form.number_field :phone, class: "form-control form-style"%>
+        </div>
+        <div >
+          <%= form.submit class:"btn", class: 'btn bt-color'%>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

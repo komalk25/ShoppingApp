@@ -3,7 +3,6 @@ wb = xlsx_package.workbook
 
 wb.add_worksheet(name: "Products") do |sheet|
     sheet.add_row %w(Title Description Price)
-
     @sellers.each do |seller|
         if seller == current_seller
             @p = seller.products

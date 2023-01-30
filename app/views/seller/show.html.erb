@@ -1,16 +1,14 @@
 <div class="container">
-<h5 class="text-info">
-Welcome, <%= @seller.name %>
-</h5>
-
-<h6>Product List:</h6>
-<%= render @seller.products %>
-
-<% if @seller.name != current_seller.name %>
+    <h5 class="text-info">
+        Welcome, <%= @seller.name %>
+    </h5>
+    <h6>Product List:</h6>
+    <%= render @seller.products %>
+    <% if @seller.name != current_seller.name %>
      
-<%else%>
-<h6>Add Product:</h6>
-<%= render 'products/form', product:@seller.products.build%>
-<%end%> 
-<%= link_to "All Products", seller_products_path(@seller), class:"btn", style:"background-color: #008ecc;"%>
+    <%else%>
+        <h6>Add Product:</h6>
+        <%= render 'products/form', product:@seller.products.build%>
+    <%end%> 
+    <%= link_to "All Products", seller_products_path(@seller), class:"btn btn-primary"%>
 </div>

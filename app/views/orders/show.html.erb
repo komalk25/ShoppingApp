@@ -1,6 +1,6 @@
 <h3>order summary : </h3>
 <div class= " container">
-    <div class="card bg-color" id="orderinfo">
+    <div class="card" style="width: 28rem; background-color: #f6f6f7">
         <div class="card-body p-2">
             <% @order.order_items.each do |order|%>
             <%= @order.date.strftime("%d/%m/%y")%><hr>
@@ -11,7 +11,7 @@
                 Supplier : <%= order.product.seller.name%><hr>
                 <div class="row">
                 <div class="col-sm-6">
-                    <%=image_tag order.product.image_url, id: "orderinfo" %>
+                    <%=image_tag order.product.image_url, style: 'height:120px; width:140px;' %>
                 </div>
                 <div class="col-sm-6">
                     <%= order.product.title%><br>
@@ -22,6 +22,3 @@
         </div>
     </div>
 </div>
-
-
-

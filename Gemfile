@@ -82,11 +82,12 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  
+
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
 gem 'rubocop', require: false
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-
+gem 'will_paginate', '~> 3.0'
+gem 'rack-cors'
